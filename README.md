@@ -11,6 +11,5 @@ $:   java 29 files, 3841 lines, 29779 words, 144317 chars
 $:   js 2 files, 4 lines, 606 words, 16384 chars
 $:   text 603 files, 379819 lines, 585516 words, 6469001 chars
 
-***note: the "text" pattern will consider every ascii file valid*** 
-
-So "py", "java", "cpp", etc. are each subsets of "text"
+***NOTE: the "text" pattern will consider every ascii file valid*** 
+***So "py", "java", "cpp", etc. are each subsets of "text"***

@@ -13,4 +13,4 @@ $:   text 603 files, 379819 lines, 585516 words, 6469001 chars
 
 ***note: the "text" pattern will consider every ascii file valid*** 
 
-So "py", "java", "cpp", etc. are a subset of "text"
+So "py", "java", "cpp", etc. are each subsets of "text"

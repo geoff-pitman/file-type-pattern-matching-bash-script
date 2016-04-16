@@ -6,7 +6,7 @@ Recursively counts number of files in dir arg passed from command line, matching
 
 $:  ./count_matching.sh ../ py cpp java js text
 
-$:
+$:   Matching file type patterns...
 
 $:   py 51 files, 19594 lines, 138502 words, 4323947 chars
 

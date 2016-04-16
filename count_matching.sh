@@ -8,7 +8,7 @@
 function search()
 {
     fresult=`find $dirarg`
-	countF=`file $fresult| egrep $2 | wc -l`
+    countF=`file $fresult| egrep $2 | wc -l`
     countL=0
     countW=0
     countC=0

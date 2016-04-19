@@ -1,10 +1,10 @@
 # file-type-pattern-matching-bash-script
-Recursively counts number of files in dir arg passed from command line, matching subsequent command line passed arg patterns (i.e. $: .py 672 python files)
+Recursively counts number of files in dir arg passed from command line, matching subsequent command line passed arg patterns (i.e. $: py 672 python files)
 
 ***Example:***
 
 
-$:  ./count_matching.sh ../ py cpp java js text
+$:  ./count_matching.sh . py cpp java js text
 
 $:   Matching file type patterns...
 

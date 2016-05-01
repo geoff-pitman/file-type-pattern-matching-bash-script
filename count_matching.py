@@ -34,17 +34,11 @@ def runProcess(shellCommandLine):
     return out
 	
 def search(dirpath, arg):
-    fRes = runProcess('find ' + dirpath)
-    fRes = fRes.replace('\n', ' ')
-    countF = runProcess('file ' + fRes + ' | egrep ' + arg + ' | wc -l')
-    countF = countF.strip()
-    countF = int(countF)
+    fRes = runProcess('find ' + dirpath).replace('\n', ' ')
+    countF =int(runProcess('file ' + fRes + ' | egrep ' + arg + ' | wc -l').strip())
+    countL, countW, countC = 0, 0, 0
     if countF > 0:
-        list = runProcess('file ' + fRes + ' | egrep ' + arg + ' | cut -d":" -f1')
-        list = list.split()
-        countL = 0
-        countW = 0
-        countC = 0
+        list = runProcess('file ' + fRes + ' | egrep ' + arg + ' | cut -d":" -f1').split()
         for f in list:
             tempL = runProcess('cat ' + str(f) + ' | wc -l')
             countL += int(tempL.strip())
@@ -53,16 +47,17 @@ def search(dirpath, arg):
             tempC = runProcess('cat ' + str(f) + ' | wc -c')
             countC += int(tempC.strip())
     return (countF, countL, countW, countC)
+
 	
 def main():
-    if len(sys.argv) < 2 or not os.path.exists(sys.argv[1]):
+    if len(sys.argv) < 3 or not os.path.isdir(sys.argv[1]):
         sys.stderr.write("ERROR\n")
         sys.exit(1)
-		
+       
     for argument in sys.argv[2:]:
         fCount, lCount, wCount, cCount = search(sys.argv[1], argument)
-        if fCount > 0:
-            sys.stdout.write(argument + " " + str(fCount) + " files, " + str(lCount) + " lines, " + str(wCount) + " words, " + str(cCount) + " chars\n")
-
+        sys.stdout.write(argument + " " + str(fCount) + " files, " + str(lCount) + " lines, " + str(wCount) + " words, " + str(cCount) + " chars\n")
+    sys.exit(0)
+    
 if __name__ == "__main__":
     main()

@@ -32,7 +32,8 @@
 function search()
 {
     fresult=`find $dirarg`
-    countF=`file $fresult| egrep $2 | wc -l`
+    countF=`file $fresult| egrep $2 | wc -l` #should loop through each result instead
+                                             #string can be too large if there are a lot of files
     countL=0
     countW=0
     countC=0

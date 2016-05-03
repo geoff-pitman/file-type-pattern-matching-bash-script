@@ -12,7 +12,7 @@ def runProcess(shellCommandLine):
     child process into global variable lastExitStatus. If the child
     returns an exit status != 0, then print its stderr to sys.stderr,
     but DO NOT EXIT!
-    # STUDENT, Note the addition of lastExitStatus to simulate $?.
+    lastExitStatus to simulate $?
     '''
     global lastExitStatus
     # The global statement is needed only in a function that modifies
